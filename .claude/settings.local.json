@@ -19,7 +19,8 @@
       "mcp__vercel__deploy_to_vercel",
       "Bash(vercel:*)",
       "Bash(npm run build:*)",
-      "Read(/C:\\Users\\denis\\webdev\\personal\\pdf-generator\\src\\lib/**)"
+      "Read(/C:\\Users\\denis\\webdev\\personal\\pdf-generator\\src\\lib/**)",
+      "Read(/C:\\Users\\denis\\webdev\\personal\\pdf-generator/**)"
     ],
     "deny": [],
     "ask": []
