@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Read(/C:\\Users\\denis\\webdev\\personal\\pdf-generator/**)",
+      "Bash(npm run dev:*)",
+      "Read(/C:\\Users\\denis\\webdev\\personal\\pdf-generator/**)",
+      "Read(/C:\\Users\\denis\\webdev\\personal\\pdf-generator/**)",
+      "Read(/C:\\Users\\denis\\webdev\\personal\\pdf-generator\\app\\api\\pdf\\generate/**)",
+      "Read(/C:\\Users\\denis\\webdev\\personal\\pdf-generator/**)",
+      "Read(/C:\\Users\\denis\\webdev\\personal\\pdf-generator\\src\\lib/**)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
