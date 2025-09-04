@@ -36,19 +36,12 @@ export async function POST(request: NextRequest) {
     // Generate PDF
     const pdfBuffer = await generatePDF(html);
 
-    // Convert to base64
-    const pdfBase64 = pdfBuffer.toString('base64');
-
-    // Return response
-    const response: PDFGenerateResponse = {
-      pdf: pdfBase64,
-      filename: filename || 'report.pdf',
-      size: pdfBuffer.length
-    };
-
-    return NextResponse.json(response, {
+    // Return PDF file directly
+    return new NextResponse(pdfBuffer, {
       headers: {
-        'Content-Type': 'application/json',
+        'Content-Type': 'application/pdf',
+        'Content-Disposition': `attachment; filename="${filename || 'report.pdf'}"`,
+        'Content-Length': pdfBuffer.length.toString(),
       }
     });
 
