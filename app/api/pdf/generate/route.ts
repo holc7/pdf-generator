@@ -17,21 +17,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Parse and validate request body
+    // Parse request body
     const body = await request.json();
-    const validationResult = pdfGenerateSchema.safeParse(body);
-
-    if (!validationResult.success) {
-      return NextResponse.json<APIError>(
-        { 
-          error: 'Validation error', 
-          details: validationResult.error.issues[0].message 
-        },
-        { status: 400 }
-      );
-    }
-
-    const { html, filename } = validationResult.data;
+    const { html, filename } = body;
 
     // Generate PDF
     const pdfBuffer = await generatePDF(html);
