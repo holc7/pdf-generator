@@ -31,7 +31,7 @@ async function getBrowser(): Promise<Browser> {
       browserInstance = await puppeteer.launch({
         args: chromium.default.args,
         executablePath: await chromium.default.executablePath(),
-        headless: chromium.default.headless,
+        headless: true,
       });
     } catch (error) {
       console.error('Failed to load chromium for production:', error);
