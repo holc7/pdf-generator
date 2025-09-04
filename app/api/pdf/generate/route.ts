@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
     const pdfBuffer = await generatePDF(html);
 
     // Return PDF file directly
-    return new NextResponse(pdfBuffer.buffer, {
+    return new NextResponse(new Uint8Array(pdfBuffer), {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': `attachment; filename="${filename || 'report.pdf'}"`,
